@@ -13,16 +13,16 @@ import com.example.clubmanagement.repository.entity.UserEntity;
 public interface ClubMapper {
 
 	@Insert("INSERT INTO clubs(club_name,request_date,request_name,request_member,club_concept,club_content)"
-			+ "VALUES(#{club_name},#{request_date},#{request_name},#{request_member},#{club_concept},#{club_content}")
+			+ "VALUES(#{clubName},#{requestDate},#{requestName},#{requestMember},#{clubConcept},#{clubContent}")
 	public int insertClubs(Clubs clubs);
 
 	@Select("SELECT * FROM users")
 	public UserEntity selectAllClibs();
 
-	@Select("SELECT * FROM users WHERE user_id = #{userId}")
+	@Select("SELECT * FROM users WHERE club_id = #{clubId}")
 	public UserEntity selectOneUsers(int userId);
 
-	@Update("UPDATE clubs SET(club_name=#{club_name},request_date=#{request_date},request_name=#{request_name},request_member=#{request_member},club_concept=#{club_concept},club_content=#{club_content}) WHERE club_id=#{clubId}")
+	@Update("UPDATE clubs SET(club_name=#{clubName},request_date=#{requestDate},request_name=#{requestName},request_member=#{requestMember},club_concept=#{clubConcept},club_content=#{clubContent}) WHERE club_id=#{clubId}")
 	public UserEntity updateUsers(int userId);
 
 	@Delete("DELETE FROM clubs  WHERE club_id = #{clubId}")
