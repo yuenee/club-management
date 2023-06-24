@@ -1,5 +1,7 @@
 package com.example.clubmanagement.repository.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -7,7 +9,6 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.example.clubmanagement.repository.entity.Clubs;
-import com.example.clubmanagement.repository.entity.UserEntity;
 
 @Mapper
 public interface ClubMapper {
@@ -16,15 +17,15 @@ public interface ClubMapper {
 			+ "VALUES(#{clubName},#{requestDate},#{requestName},#{requestMember},#{clubConcept},#{clubContent}")
 	public int insertClubs(Clubs clubs);
 
-	@Select("SELECT * FROM users")
-	public UserEntity selectAllClibs();
+	@Select("SELECT * FROM clubs")
+	public List<Clubs> selectAllClubs();
 
-	@Select("SELECT * FROM users WHERE club_id = #{clubId}")
-	public UserEntity selectOneUsers(int userId);
+	@Select("SELECT * FROM clubs WHERE club_id = #{clubId}")
+	public Clubs selectOneUsers(int userId);
 
 	@Update("UPDATE clubs SET(club_name=#{clubName},request_date=#{requestDate},request_name=#{requestName},request_member=#{requestMember},club_concept=#{clubConcept},club_content=#{clubContent}) WHERE club_id=#{clubId}")
-	public UserEntity updateUsers(int userId);
+	public int updateUsers(Clubs clubs);
 
 	@Delete("DELETE FROM clubs  WHERE club_id = #{clubId}")
-	public UserEntity deleteUsers(int userId);
+	public int deleteUsers(int userId);
 }
