@@ -12,7 +12,7 @@ public class Clubs {
     private LocalDate requestDate;
     private String requestName;
     private int requestMember;
-    private String club_concept;
-    private String club_content;
+    private String clubConcept;
+    private String clubContent;
 
 }
