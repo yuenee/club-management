@@ -13,7 +13,27 @@
 
  <body class="bg-light">
 	<div class="title">
-		<h1>clubList</h1>
+		<h1>部活動一覧画面</h1>
+	</div>
+	<div class="clubList">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>部活名</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cs : ${cluds}">
+					<td th:text="${cs.value.getName}"></td>
+					<td>
+						<a class="btn btn-primary" th:href="@{/club/detail}">
+							詳細
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
  </body>
 

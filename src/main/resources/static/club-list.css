@@ -1,1 +1,24 @@
-@charset "UTF-8";
+.title{
+  text-align: center;
+}
+h1{
+  font-weight:bold;
+}
+.clubList{
+  text-align: center;
+  width:1000px;
+  margin:auto;
+  font-size: 120%;
+}
+table{
+  text-align: center;
+}
+th{
+  min-width:10rem;
+}
+tbody{
+  font-weight:bold;
+}
+.btn-primary{
+  width:75%;
+}
