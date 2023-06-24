@@ -1,4 +1,4 @@
-package com.example.clubmanagement.model;
+package com.example.clubmanagement.dto;
 
 import lombok.Data;
 
