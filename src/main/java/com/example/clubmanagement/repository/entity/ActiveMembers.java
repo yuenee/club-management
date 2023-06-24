@@ -7,7 +7,7 @@ public class ActiveMembers {
 
     private int activeId;
     private int reportId;
-    private int userId;
+    private String userName;
     private String thought;
 
 }
